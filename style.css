@@ -70,6 +70,7 @@ header p{
   font-size: 18px;
 }
 
+
 .column{
   width: 100%;
   float: left;
@@ -77,6 +78,7 @@ header p{
   display: flex;
   flex-wrap: wrap;
   align-content: center;
+  flex-direction: row;
 }
 
 .left {
@@ -99,9 +101,8 @@ main{
   top: 175px;
 }
 
-/*body{*/
+/*body{}*/
 
-}
 
 h1{
   font-size: 48px;
@@ -142,6 +143,7 @@ footer{
   padding-bottom: 5px;
   margin-top: 60px;
   color: white;
+  display: inline;
 }
 
 footer img{
@@ -173,13 +175,17 @@ text-align: center;
 #store{
 background-color: rgba(29, 176, 109, .28);
 min-height: 400px;
+display: flex;
+justify-content: flex-start;
+flex-wrap: wrap;
+align-content: center;
+align-items: flex-start;
 }
 
 .book {
   padding: 5px;
   display: flex;
   max-width: 400px;
-  align-items: flex-start;
 
 }
 
@@ -245,6 +251,68 @@ align-content: center;
 }
 
 
+/* Responsive layout - when the screen is less than 1200px wide, make the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 1200px) {
+ 
+.left {
+  width: 10%;
+   float: left;
+}
+.right {
+  width: 45%;
+  padding-right: 20px;
+   float: left;
+}
+
+.middle {
+  width: 45%;
+  justify-content: center;
+  padding-left: 20px;
+}
+
+#store{
+padding-top: 30px;
+}
+}
+
+
+/* Responsive layout - when the screen is less than 800px wide, make the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+ 
+.left {
+  width: 10%;
+   float: left;
+}
+
+.left img {
+display: none;
+}
+
+
+.right {
+  width: 40%;
+  padding-right: 10px;
+  padding-left: 20px;
+   float: left;
+}
+
+.right p{
+  font-size: 16px;
+}
+
+.middle {
+  width: 50%;
+  justify-content: center;
+}
+
+#store{
+padding-top: 30px;
+}
+}
+
+
+
+
 /* Responsive layout - when the screen is less than 600px wide, make the three columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
   .column {
@@ -275,5 +343,10 @@ margin: auto;
 height:100%;
 display: block;
 text-align: center;
+margin-bottom: 50px;
+}
+#store{
+padding-top: 30px;
+padding-bottom: 30px;
 }
 } 
